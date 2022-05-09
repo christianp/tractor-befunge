@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="script.js" defer></script>
+        <link rel="prefetch" href="tractor.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <canvas id="canvas" ></canvas>
+
+            <div id="sidebar">
+                <div id="selector">
+                </div>
+            </div>
+
+            <div id="controls">
+                <input id="speed" min="0" max="10" value="5" step="0.001" type="range">
+                <button id="go">Go</button>
+                <pre id="debug"></pre>
+            </div>
+        </main>
+    </body>
+</html>
