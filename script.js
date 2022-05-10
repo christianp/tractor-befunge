@@ -41,7 +41,7 @@ function set_canvas_size() {
     canvas.width = box.width;
     canvas.height = box.height;
     ctx.translate(canvas.width/2,canvas.height/2);
-    set_zoom(1);
+    set_zoom(1,false);
     ctx.save();
     redraw();
 }
@@ -711,11 +711,13 @@ canvas.addEventListener('mousemove', e => {
 canvas.addEventListener('wheel', e => {
     set_zoom(- Math.round(e.deltaY /WHEEL_SCALE)*0.1);
 });
-function set_zoom(dz) {
+function set_zoom(dz,do_redraw=true) {
     zoom += dz;
     zoom = Math.min(Math.max(0,zoom),2);
     scale = Math.pow(2,zoom);
-    redraw();
+    if(do_redraw) {
+        redraw();
+    }
 }
 function shift_view(dx,dy) {
     const [px,py] = project(dx,dy);
